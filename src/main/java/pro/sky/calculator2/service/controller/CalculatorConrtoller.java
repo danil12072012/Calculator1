@@ -1,8 +1,9 @@
-package pro.sky.calculator2;
+package pro.sky.calculator2.service.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.sky.calculator2.service.service.CalculatorServise;
 
 @RestController
 public class CalculatorConrtoller {
@@ -43,9 +44,7 @@ public class CalculatorConrtoller {
         if (a == null || b == null) {
             return "не передан один из параметров";
         }
-        if ("/".equals(operation) && b == 0) {
-            return "на ноль делить нельзя";
-        }
+
         return a + " " + operation + " " + b + " = " + result;
     }
 }
